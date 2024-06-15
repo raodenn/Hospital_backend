@@ -5,7 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     if (isset($_FILES["csv_file"]) && $_FILES["csv_file"]["error"] == UPLOAD_ERR_OK) {
         $csvFile = $_FILES["csv_file"]["tmp_name"];
 
-        // Process the uploaded CSV file (example function)
         processCSVFile($csvFile);
     } else {
         echo "Error uploading CSV file.";

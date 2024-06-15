@@ -35,7 +35,7 @@ function authenticateUser($username, $password) {
         if (password_verify($password, $hashedPassword)) {
             $cookie_name = 'user_id';
             $cookie_value = $id;
-            setcookie($cookie_name, $cookie_value, time() + (86400 ), "/"); // 30 days expiration
+            setcookie($cookie_name, $cookie_value, time() + (86400 ), "/"); 
 
             $cookie_name = 'username';
             $cookie_value = $username;
@@ -127,7 +127,7 @@ function sortPatientsByColumn($column, $order = 'ASC') {
     global $conn;
     $validColumns = ['name', 'age', 'gender', 'address', 'phone', 'email'];
     if (!in_array($column, $validColumns)) {
-        $column = 'name'; // Default column
+        $column = 'name'; 
     }
     $stmt = $conn->prepare("SELECT * FROM patients ORDER BY $column $order");
     $stmt->execute();
@@ -224,7 +224,6 @@ function uploadPatientDocx($email, $file)
     }
 }
 
-// Function to update patient record with DOCX file path
 function updatePatientFilePath($email, $FilePath) {
     global $conn;
     $stmt = $conn->prepare("UPDATE patients SET docx_file_path = ? WHERE email = ?");
@@ -260,7 +259,6 @@ function downloadPatientDocx($email) {
     }
 }
 
-// Function to fetch DOCX file path from database
 function getPatientFilePath($email) {
     global $conn;
     $stmt = $conn->prepare("SELECT docx_file_path FROM patients WHERE email = ?");
@@ -272,8 +270,7 @@ function getPatientFilePath($email) {
     return $patient ? $patient['docx_file_path'] : null;
 }
 
-// Function to generate PDF report for patients
-// Function to generate PDF report
+
 function generatePDFReport() {
     require_once '../vendor/autoload.php'; // Adjust path as per your autoload location
     $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
