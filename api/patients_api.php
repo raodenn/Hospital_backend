@@ -1,4 +1,6 @@
 <?php
+require_once '../functions/functions.php';
+
 if (!isLoggedIn() || !hasRole('admin')) {
     echo json_encode(["error" => "Access denied."]);
     exit;
