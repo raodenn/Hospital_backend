@@ -1,4 +1,6 @@
 <?php
+require_once '../functions/functions.php';
+
 // PHP logic here
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = htmlspecialchars($_POST['name']);

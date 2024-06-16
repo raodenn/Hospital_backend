@@ -1,4 +1,6 @@
 <?php
+require_once '../functions/functions.php';
+
 if (!isLoggedIn() || !hasRole('admin')) {
     die("Access denied.");
 }
