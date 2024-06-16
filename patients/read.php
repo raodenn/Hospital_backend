@@ -88,5 +88,3 @@ $patients = getPatients();
 </body>
 </html>
 
-
-?>
