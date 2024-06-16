@@ -141,12 +141,6 @@
             <p>Import patient condition results.</p>
             <a href='patients/import_report.php'>import report</a>
         </div>
-
-        <div class="grid-item"> 
-            <h3>Export Reports</h3>
-            <p>Export patient reports for external use.</p>
-            <a href="patients/export_report.php">Export Now</a>
-        </div>
         <div class="grid-item"> 
             <h3>Update Patient</h3>
             <p>Update patient data and record.</p>
