@@ -1,6 +1,10 @@
 <?php
 require_once '../functions/functions.php';
 
+if (!isLoggedIn() || !hasRole('admin') ||!hasRole('staff')||!hasRole('nurse')) {
+    die("Access denied.");
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     if (isset($_FILES["csv_file"]) && $_FILES["csv_file"]["error"] == UPLOAD_ERR_OK) {
         $csvFile = $_FILES["csv_file"]["tmp_name"];

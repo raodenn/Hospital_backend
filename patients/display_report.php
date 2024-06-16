@@ -57,10 +57,9 @@ $patients = getPatients();
 <body>
     <h1>Patients List</h1>
 
-    <!-- Link to generate and display PDF report -->
+    
     <a href="generate_report.php" target="_blank">Generate PDF Report</a>
 
-    <!-- Display patient data -->
     <table>
         <tr>
             <th>ID</th>

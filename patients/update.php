@@ -1,7 +1,7 @@
 <?php
 require_once '../functions/functions.php';
 
-if (!isLoggedIn() || !hasRole('admin')) {
+if (!isLoggedIn() || !hasRole('admin') ||!hasRole('doctor')) {
     die("Access denied.");
 }
 

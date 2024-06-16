@@ -1,6 +1,10 @@
 <?php
 require_once '../functions/functions.php';
 
+if (!isLoggedIn() || !hasRole('admin') ||!hasRole('staff')) {
+    die("Access denied.");
+}
+
 // PHP logic here
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = htmlspecialchars($_POST['name']);
